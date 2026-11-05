@@ -1,4 +1,3 @@
-class_name RegionManager
 extends Node
 
 const REGIONS := [
@@ -23,6 +22,6 @@ func load_region(region_id: String, parent: Node) -> Node:
 	var packed := load(path) as PackedScene
 	if packed == null:
 		return null
-	var inst := packed.instantiate()
+	var inst: Node = packed.instantiate()
 	parent.add_child(inst)
 	return inst
