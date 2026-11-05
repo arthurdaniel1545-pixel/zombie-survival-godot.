@@ -17,9 +17,9 @@ func equip(slot: String, item_id: String) -> bool:
 func unequip(slot: String) -> String:
 	if not slots.has(slot):
 		return ""
-	var v := slots[slot]
+	var v: String = str(slots[slot])
 	slots[slot] = ""
 	return v
 
 func get_equipped(slot: String) -> String:
-	return slots.get(slot, "")
+	return str(slots.get(slot, ""))
