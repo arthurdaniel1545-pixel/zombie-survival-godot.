@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3]
+
+[node name="CharacterCreator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="PreviewViewport" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PreviewViewportInner" type="SubViewport" parent="PreviewViewport"]
+size = Vector2i(640, 720)
+
+[node name="PreviewRoot" type="Node3D" parent="PreviewViewport/PreviewViewportInner"]
+
+[node name="Camera3D" type="Camera3D" parent="PreviewViewport/PreviewViewportInner"]
+position = Vector3(0, 1.2, 2.5)
+rotation_degrees = Vector3(0, 180, 0)
+
+[ext_resource type="Script" path="res://scripts/character/character_creator.gd" id="1"]
