@@ -28,7 +28,7 @@ func _refresh_preview() -> void:
 		return
 	var packed := load(path)
 	if packed is PackedScene:
-		var inst := packed.instantiate()
+		var inst: Node = packed.instantiate()
 		preview.add_child(inst)
 		_apply_skin_tone(inst, data.skin_tone)
 
