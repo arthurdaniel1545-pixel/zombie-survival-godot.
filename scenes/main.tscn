@@ -1,3 +1,22 @@
-[gd_scene format=3]
+[gd_scene load_steps=3 format=3]
+
+[sub_resource type="PlaneMesh" id="GroundMesh"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="GroundMaterial"]
+albedo_color = Color(0.22, 0.29, 0.19, 1)
 
 [node name="Main" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("GroundMesh")
+surface_material_override/0 = SubResource("GroundMaterial")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 8, 12)
+rotation_degrees = Vector3(-30, 0, 0)
+current = true
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-50, -30, 0)
+shadow_enabled = false
